@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MortgageCalculator.MainPage">
+
+    <ScrollView>
+        <Grid ColumnDefinitions="2*,*"
+              RowDefinitions="*,*"
+              Padding="30,0"
+              ColumnSpacing="25">
+            <VerticalStackLayout
+                Spacing="25"
+                Padding="30,0"
+                VerticalOptions="Center"
+                Grid.Column="0"
+                Grid.Row="0">
+                <HorizontalStackLayout
+                    Spacing="25"
+                    Padding="30,0"
+                    HorizontalOptions="Center">
+                    <Label Text="Loan Amount"
+                           FontSize="22"
+                           SemanticProperties.Description="Total cost minus down payment"/>
+                    <Entry x:Name="LoanAmount"
+                           FontSize="32"
+                           BackgroundColor="AntiqueWhite"
+                           Text="500000"
+                           TextChanged="OnLoanAmountChanged"
+                           WidthRequest="200"/>
+                    <CheckBox
+                        x:Name="LoanCheckBox"
+                        IsEnabled="False"
+                        CheckedChanged="LoanCheckBox_CheckedChanged"/>
+                </HorizontalStackLayout>
+            
+                <HorizontalStackLayout
+                    Spacing="25"
+                    Padding="30,0"
+                    HorizontalOptions="Center">
+                    <Label Text="Interest rate"
+                           FontSize="22"
+                           SemanticProperties.Description="Interest rate"/>
+                    <Entry x:Name="InterestRate"
+                           FontSize="32"
+                           BackgroundColor="AntiqueWhite"
+                           Text="7.5"
+                           TextChanged="OnLoanAmountChanged"
+                           WidthRequest="200"/>
+                    <CheckBox
+                        x:Name="InterestRateCheckBox"
+                        IsChecked="True"
+                        CheckedChanged="InterestRateCheckBox_CheckedChanged"
+                        />
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+            <VerticalStackLayout
+                Spacing="25"
+                Padding="30,0"
+                VerticalOptions="Center"
+                Grid.Column="1"
+                Grid.Row="0">
+                <HorizontalStackLayout
+                    Spacing="25"
+                    Padding="30,0"
+                    HorizontalOptions="Center">
+                    <Label Text="HOA Fee"
+                           FontSize="22"
+                           SemanticProperties.Description="Total cost minus down payment"/>
+                    <Entry x:Name="HOAFee"
+                           FontSize="32"
+                           BackgroundColor="AntiqueWhite"
+                           Text="200"
+                           TextChanged="OnLoanAmountChanged"
+                           WidthRequest="200"/>
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout
+                    Spacing="25"
+                    Padding="30,0"
+                    HorizontalOptions="Center">
+                    <Label Text="Property tax rate"
+                           FontSize="22"
+                           SemanticProperties.Description="Tax rate"/>
+                    <Entry x:Name="TaxRate"
+                           FontSize="32"
+                           BackgroundColor="AntiqueWhite"
+                           Text=".88294"
+                           TextChanged="OnLoanAmountChanged"
+                           WidthRequest="200"/>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+            <HorizontalStackLayout
+                    Spacing="25"
+                    Padding="30,0"
+                    HorizontalOptions="Center"
+                    Grid.Column="0"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="2">
+                <Label Text="Monthly Payment"
+                           FontSize="22"
+                           SemanticProperties.Description="Total monthly payment"/>
+                <Entry x:Name="MonthlyPayment"
+                           FontSize="32"
+                           BackgroundColor="AntiqueWhite"
+                           TextChanged="OnMonthlyPaymentChanged"
+                           WidthRequest="200"
+                           HeightRequest="1"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Start"/>
+            </HorizontalStackLayout>
+        </Grid>
+    </ScrollView>
+</ContentPage>
